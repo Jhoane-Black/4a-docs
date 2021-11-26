@@ -12,11 +12,11 @@ public class RegisterController {
     public RegisterController(RegisterRepository repository) {
         this.repository = repository;
     }
-    @GetMapping("/sale-register/{nombreCliente}") // convert the next method to an endpoint
+    @GetMapping("/saleRegister/{nombreCliente}") // convert the next method to an endpoint
     List<SaleRegister> getSaleRegisterByCliente(@PathVariable String nombreCliente){
         return this.repository.getByNombreCliente(nombreCliente);
     }
-    @PostMapping("/sale-register")
+    @PostMapping("/saleRegister")
     SaleRegister newSaleRegister(@RequestBody SaleRegister saleRegister){
         return this.repository.save(saleRegister);
     }
