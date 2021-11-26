@@ -8,20 +8,20 @@ import org.springframework.data.annotation.Id;
 public class SaleRegister {
     @Id
     private String registroID;
-    private String nombre_cliente;
+    private String nombreCliente;
     private String proveedor;
-    private String nombre_producto;
+    private String nombreProducto;
     private Integer cantidad;
     private Integer precio;
     private Integer total;
     private Date fecha;
     private String promocion;
 
-    public SaleRegister(String registroID, String nombre_cliente, String proveedor, String nombre_producto, Integer cantidad, Integer precio, Date fecha, String promocion) {
+    public SaleRegister(String registroID, String nombrePliente, String proveedor, String nombreProducto, Integer cantidad, Integer precio, Date fecha, String promocion) {
         this.registroID = registroID;
-        this.nombre_cliente = nombre_cliente;
+        this.nombreCliente = nombreCliente;
         this.proveedor = proveedor;
-        this.nombre_producto = nombre_producto;
+        this.nombreProducto = nombreProducto;
         this.cantidad = cantidad;
         this.precio = precio;
         this.fecha = fecha;
@@ -33,12 +33,12 @@ public class SaleRegister {
         return registroID;
     }
 
-    public String getNombre_cliente() {
-        return nombre_cliente;
+    public String getNombreCliente() {
+        return nombreCliente;
     }
 
-    public void setNombre_cliente(String nombre_cliente) {
-        this.nombre_cliente = nombre_cliente;
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
     }
 
     public String getProveedor() {
@@ -49,12 +49,12 @@ public class SaleRegister {
         this.proveedor = proveedor;
     }
 
-    public String getNombre_producto() {
-        return nombre_producto;
+    public String getNombreProducto() {
+        return nombreProducto;
     }
 
-    public void setNombre_producto(String nombre_producto) {
-        this.nombre_producto = nombre_producto;
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
     }
 
     public Integer getCantidad() {
