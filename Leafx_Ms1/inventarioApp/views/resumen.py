@@ -1,6 +1,7 @@
 from rest_framework import generics
+from django.contrib.auth.models import User
 from ..models import Proveedor, Producto, Cliente, Comentario
-from ..serializers import ProductoSerializer, ComentarioSerializer
+from ..serializers import ProductoSerializer, ComentarioSerializer, UserSerializer
 
 # Resumen
 

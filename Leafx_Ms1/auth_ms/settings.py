@@ -168,3 +168,7 @@ REST_FRAMEWORK = {
 }
 
 
+
+# HEROKU
+import django_heroku
+django_heroku.settings(locals())
