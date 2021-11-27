@@ -2,9 +2,7 @@ package com.example.Register.models;
 
 import java.util.Date;
 import org.springframework.data.annotation.Id;
-//import org.springframework.data.mongodb.core.mapping.Document;
 
-//@Document(collection = "microservice2")
 public class SaleRegister {
     @Id
     private String registroID;
@@ -17,21 +15,27 @@ public class SaleRegister {
     private Date fecha;
     private String promocion;
 
-    public SaleRegister(String registroID, String nombrePliente, String proveedor, String nombreProducto, Integer cantidad, Integer precio, Date fecha, String promocion) {
+    public SaleRegister(String registroID, String nombreCliente, String proveedor, String nombreProducto, Integer cantidad, Integer precio, Integer total, Date fecha, String promocion) {
         this.registroID = registroID;
         this.nombreCliente = nombreCliente;
         this.proveedor = proveedor;
         this.nombreProducto = nombreProducto;
         this.cantidad = cantidad;
         this.precio = precio;
+        this.total = total;
         this.fecha = fecha;
         this.promocion = promocion;
-        this.total = precio*cantidad;
+
     }
 
     public String getRegistroID() {
         return registroID;
     }
+    /*
+    public void setRegistroID(String registroID) {
+        this.registroID = registroID;
+    }
+    */
 
     public String getNombreCliente() {
         return nombreCliente;

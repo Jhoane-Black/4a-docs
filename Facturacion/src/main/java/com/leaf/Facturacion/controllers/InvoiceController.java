@@ -15,62 +15,18 @@ public class InvoiceController {
     public InvoiceController(InvoiceRepository repository) {
         this.repository = repository;
     }
-
-
-    // Methods
-
-    /*
-    OBTENER UNA FACTURA POR id
-
-    Tipo: GET
-    url: "/invoice/{id}"
-    Path Variable: le mando el id
-    Qué me debe devolver: Factura
-     */
     @GetMapping("/invoice/{id}")
     public Optional<Invoice> getInvoice(@PathVariable String id){
         return this.repository.findById(id);
     }
-
-    /*
-    CREAR UNA FACTURA POR id
-
-    Tipo: POST
-    url: "/invoice"
-    Body: le mando datos de la factura
-    Qué me debe devolver: Factura
-     */
     @PostMapping("/invoice")
     public Invoice newInvoice(@RequestBody Invoice invoice){
-
         return this.repository.save(invoice);
     }
-
-    /*
-    BORRAR UNA FACTURA POR id
-
-    tipo: DELETE
-    url: "/invoice/{id}"
-    recibe: id
-    como recibe: Path
-
-    que retorna: NO
-    */
     @DeleteMapping("/invoice/{id}")
     public void deleteInvoice(@PathVariable String id){
         repository.deleteById(id);
     }
-
-    /*
-    ACTUALIZAR UNA FACTURA POR id
-
-    tipo: PUT
-    url: "/invoice/{id}"
-    recibe: id, Invoice
-    como recibe: Path, Body
-
-    que retorna: Invoice
-     */
     @PutMapping("/invoice/{id}")
     public Invoice updateInvoice(@PathVariable String id, @RequestBody Invoice new_invoice){
         Invoice old_invoice = repository.findById(id).orElse(null);
