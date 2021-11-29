@@ -12,6 +12,8 @@ https://arqdve.atlassian.net/jira/software/projects/UMPG/code
 ## Repositorio Github
 https://github.com/Jhoane-Black/4a-docs
 
+### Nota 2: el segundo microservicio está ubicado por el momento en la rama leaf/ms2_backend/Register
+
 ### Nota: el proyecto se encuentra ubicado por el momento en la rama leaf/backend/
 
 ### Nota: poner manualmente las credenciales del backend, que se encuentran el la carpeta drive (secrets.json) dentro de la carpeta Leafx_Ms1 (ubicada en leaf/backend) 
