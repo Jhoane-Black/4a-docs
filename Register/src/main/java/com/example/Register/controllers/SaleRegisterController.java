@@ -72,7 +72,7 @@ public class SaleRegisterController {
         oldSRegister.setNombreProducto(newSRegister.getNombreProducto());
         oldSRegister.setPromocion(newSRegister.getPromocion());
         oldSRegister.setPrecio(newSRegister.getPrecio());
-        oldSRegister.setTotal(newSRegister.getPrecio(),newSRegister.getCantidad());
+        oldSRegister.setTotal(newSRegister.getPrecio() * newSRegister.getCantidad());
         return repository.save(oldSRegister);
     }*/
 }

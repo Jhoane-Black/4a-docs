@@ -15,14 +15,14 @@ public class SaleRegister {
     private Date fecha;
     private String promocion;
 
-    public SaleRegister(String registroID, String nombreCliente, String proveedor, String nombreProducto, Integer cantidad, Integer precio, Integer total, Date fecha, String promocion) {
+    public SaleRegister(String registroID, String nombreCliente, String proveedor, String nombreProducto, Integer cantidad, Integer precio, Date fecha, String promocion) {
         this.registroID = registroID;
         this.nombreCliente = nombreCliente;
         this.proveedor = proveedor;
         this.nombreProducto = nombreProducto;
         this.cantidad = cantidad;
         this.precio = precio;
-        this.total = total;
+        this.total = cantidad * precio;
         this.fecha = fecha;
         this.promocion = promocion;
 
