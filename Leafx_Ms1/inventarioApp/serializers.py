@@ -3,11 +3,6 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['username', 'email']
-
 class ProveedorSerializer(serializers.ModelSerializer):
     #user = UserSerializer(read_only=True)
     class Meta:
@@ -29,4 +24,31 @@ class ComentarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comentario
         fields = '__all__'
-        
+
+
+class UserCreationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email']
+
+
+
+
+
+class UserClienteSerializer(serializers.ModelSerializer):
+    cliente = ClienteSerializer()
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'cliente']
+
+class UserProveedorSerializer(serializers.ModelSerializer):
+    proveedor = ProveedorSerializer()
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'proveedor']
