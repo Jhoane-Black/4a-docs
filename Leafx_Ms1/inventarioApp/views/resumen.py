@@ -1,7 +1,7 @@
 from rest_framework import generics
 from django.contrib.auth.models import User
 from ..models import Proveedor, Producto, Cliente, Comentario
-from ..serializers import ProductoSerializer, ComentarioSerializer, UserSerializer
+from ..serializers import ProductoSerializer, ComentarioSerializer, ClienteSerializer, ProveedorSerializer, UserSerializer
 
 # Resumen
 
@@ -29,4 +29,22 @@ class ProductosDeProveedorList(generics.ListAPIView):
     def get(self, request, *args, **kwargs):
         proveedor = Proveedor.objects.get(pk=kwargs['pk'])
         self.queryset = Producto.objects.filter(proveedor=proveedor).order_by('nombre')
+        return self.list(request, *args, **kwargs)
+
+
+class ClientesDeUserList(generics.ListAPIView):
+    serializer_class = ClienteSerializer
+
+    def get(self, request, *args, **kwargs):
+        user = User.objects.get(pk=kwargs['pk'])
+        self.queryset = Cliente.objects.filter(user=user).order_by('nombre')
+        return self.list(request, *args, **kwargs)
+
+
+class ProveedoresDeUserList(generics.ListAPIView):
+    serializer_class = ProveedorSerializer
+
+    def get(self, request, *args, **kwargs):
+        user = User.objects.get(pk=kwargs['pk'])
+        self.queryset = Proveedor.objects.filter(user=user).order_by('nombre')
         return self.list(request, *args, **kwargs)

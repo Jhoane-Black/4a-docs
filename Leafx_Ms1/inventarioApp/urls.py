@@ -14,6 +14,6 @@ urlpatterns = [
     path('resumen/cliente/<pk>/', ComentariosDeClienteList.as_view()),
     path('resumen/proveedor/<pk>/', ProductosDeProveedorList.as_view()),
     path('user/', UserRetrieve.as_view()),
-
-    
+    path('resumen/user/clientes/<pk>/', ClientesDeUserList.as_view()),
+    path('resumen/user/proveedores/<pk>/', ProveedoresDeUserList.as_view()),    
 ]
